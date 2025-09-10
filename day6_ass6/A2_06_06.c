@@ -50,16 +50,51 @@ Matrix C (Result):
 124 199 142 104  51 
 
 The CPU utilisation even if it took less than a second, this is what we found regarding the debugging of the program.
-adminpc@ADMINPC:~$ sar -u 1 5
-Linux 5.15.0-139-generic (ADMINPC) 	10/09/25 	_x86_64_	(12 CPU)
 
-12:08:07 PM IST     CPU     %user     %nice   %system   %iowait    %steal     %idle
-12:08:08 PM IST     all      0.17      0.00      0.08      0.00      0.00     99.75
-12:08:09 PM IST     all      0.42      0.00      0.34      0.00      0.00     99.24
-12:08:10 PM IST     all      0.33      0.00      0.17      0.33      0.00     99.16
-12:08:11 PM IST     all      0.25      0.00      0.42      0.00      0.00     99.33
-12:08:12 PM IST     all      0.76      0.00      0.34      0.00      0.00     98.90
-Average:        all      0.39      0.00      0.27      0.07      0.00     99.28
+adminpc@ADMINPC:~$ sar -u 1 5
+Linux 6.8.0-1030-azure (codespaces-7a6aae)      09/10/25        _x86_64_        (2 CPU)
+
+07:01:02        CPU     %user     %nice   %system   %iowait    %steal     %idle
+07:01:03        all      5.08      0.00      7.61      0.00      0.00     87.31
+07:01:04        all     10.00      0.00      8.00      0.00      0.00     82.00
+07:01:05        all      7.54      0.00      7.54      0.00      0.00     84.92
+07:01:06        all      1.52      0.00      2.02      0.00      0.00     96.46
+07:01:07        all      7.54      0.00      6.53      0.00      0.00     85.93
+Average:        all      6.34      0.00      6.34      0.00      0.00     87.31
+
+adminpc@ADMINPC:~$ cpustat
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  4.00   2.00   2.00   24598 S    1   1.12m /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  1.00   1.00   0.00     357 S    1  11.22s /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  4.00   1.00   3.00   24598 S    1   1.12m /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  2.00   1.00   1.00    1067 S    0   5.55s /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+  1.00   1.00   0.00     357 S    1  11.23s /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  3.00   1.00   2.00   24598 S    1   1.12m /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+  1.00   0.00   1.00    2637 S    1   0.18s /bin/bash
+
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  2.00   1.00   1.00   24598 S    1   1.12m /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+  1.00   0.00   1.00    1067 S    0   5.56s /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  2.00   1.00   1.00     357 S    1  11.25s /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+  1.00   0.00   1.00       7 S    0   0.85s /bin/sh
+  1.00   1.00   0.00    1067 S    0   5.57s /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+  1.00   1.00   0.00   24598 S    1   1.12m /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+
+  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  3.00   1.00   2.00   24598 S    1   1.12m /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
+
+^C  %CPU   %USR   %SYS     PID S  CPU    Time Task
+  4.00   4.00   0.00   24598 S    1   1.12m /vscode/bin/linux-x64/6f17636121051a53c88d3e605c491d22af2ba755/node
 */
 
 #include <stdio.h>
