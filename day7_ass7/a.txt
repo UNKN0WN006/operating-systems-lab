@@ -1,0 +1,407 @@
+Starting program...
+Initial: t1=100000, t2=100000, t3=100000
+
+Th1: Moving 5 from t1
+Th1: t1=99995, t3=100005
+All threads started
+Th3: Moving 8 from t3
+Th3: t3=99997, t1=100003
+
+--- Display Thread ---
+t1=100003, t2=100000, t3=99997
+Total=300000
+--- End Display ---
+
+Th2: Moving 10 from t2
+Th2: t2=99990, t1=100013
+Th1: Moving 9 from t1
+Th1: t1=100004, t2=99999
+Th2: Moving 10 from t2
+Th2: t2=99989, t3=100007
+Th3: Moving 26 from t3
+Th3: t3=99981, t1=100030
+Th1: Moving 9 from t1
+Th1: t1=100021, t2=99998
+Th2: Moving 4 from t2
+Th2: t2=99994, t1=100025
+Th1: Moving 9 from t1
+Th1: t1=100016, t2=100003
+
+--- Display Thread ---
+t1=100016, t2=100003, t3=99981
+Total=300000
+--- End Display ---
+
+Th3: Moving 13 from t3
+Th3: t3=99968, t1=100029
+Th1: Moving 1 from t1
+Th1: t1=100028, t3=99969
+Th2: Moving 15 from t2
+Th2: t2=99988, t3=99984
+Th1: Moving 7 from t1
+Th1: t1=100021, t3=99991
+Th3: Moving 6 from t3
+Th3: t3=99985, t1=100027
+Th2: Moving 6 from t2
+Th2: t2=99982, t1=100033
+Th1: Moving 2 from t1
+Th1: t1=100031, t2=99984
+
+--- Display Thread ---
+t1=100031, t2=99984, t3=99985
+Total=300000
+--- End Display ---
+
+Th3: Moving 22 from t3
+Th3: t3=99963, t2=100006
+Th2: Moving 13 from t2
+Th2: t2=99993, t3=99976
+Th1: Moving 10 from t1
+Th1: t1=100021, t2=100003
+Th1: Moving 6 from t1
+Th1: t1=100015, t3=99982
+Th2: Moving 12 from t2
+Th2: t2=99991, t1=100027
+Th3: Moving 4 from t3
+Th3: t3=99978, t2=99995
+Th1: Moving 8 from t1
+Th1: t1=100019, t2=100003
+Th2: Moving 16 from t2
+Th2: t2=99987, t3=99994
+
+--- Display Thread ---
+t1=100019, t2=99987, t3=99994
+Total=300000
+--- End Display ---
+
+Th1: Moving 9 from t1
+Th1: t1=100010, t2=99996
+Th3: Moving 6 from t3
+Th3: t3=99988, t1=100016
+Th2: Moving 14 from t2
+Th2: t2=99982, t3=100002
+Th1: Moving 1 from t1
+Th1: t1=100015, t2=99983
+Th3: Moving 24 from t3
+Th3: t3=99978, t2=100007
+Th1: Moving 7 from t1
+Th1: t1=100008, t2=100014
+Th2: Moving 4 from t2
+Th2: t2=100010, t1=100012
+Th1: Moving 1 from t1
+Th1: t1=100011, t3=99979
+
+--- Display Thread ---
+t1=100011, t2=100010, t3=99979
+Total=300000
+--- End Display ---
+
+Th3: Moving 2 from t3
+Th3: t3=99977, t1=100013
+Th2: Moving 1 from t2
+Th2: t2=100009, t1=100014
+Th1: Moving 7 from t1
+Th1: t1=100007, t3=99984
+Th2: Moving 12 from t2
+Th2: t2=99997, t3=99996
+Th3: Moving 11 from t3
+Th3: t3=99985, t2=100008
+Th1: Moving 1 from t1
+Th1: t1=100006, t3=99986
+Th1: Moving 4 from t1
+Th1: t1=100002, t2=100012
+Th2: Moving 15 from t2
+Th2: t2=99997, t1=100017
+
+--- Display Thread ---
+t1=100017, t2=99997, t3=99986
+Total=300000
+--- End Display ---
+
+Th3: Moving 19 from t3
+Th3: t3=99967, t2=100016
+Th1: Moving 3 from t1
+Th1: t1=100014, t3=99970
+Th2: Moving 15 from t2
+Th2: t2=100001, t1=100029
+Th1: Moving 6 from t1
+Th1: t1=100023, t3=99976
+Th3: Moving 11 from t3
+Th3: t3=99965, t1=100034
+Th2: Moving 11 from t2
+Th2: t2=99990, t3=99976
+Th1: Moving 3 from t1
+Th1: t1=100031, t2=99993
+
+--- Display Thread ---
+t1=100031, t2=99993, t3=99976
+Total=300000
+--- End Display ---
+
+Th3: Moving 1 from t3
+Th3: t3=99975, t2=99994
+Th1: Moving 8 from t1
+Th1: t1=100023, t2=100002
+Th2: Moving 16 from t2
+Th2: t2=99986, t3=99991
+Th1: Moving 1 from t1
+Th1: t1=100022, t3=99992
+Th2: Moving 4 from t2
+Th2: t2=99982, t1=100026
+Th3: Moving 27 from t3
+Th3: t3=99965, t2=100009
+Th1: Moving 10 from t1
+Th1: t1=100016, t3=99975
+Th2: Moving 12 from t2
+Th2: t2=99997, t3=99987
+Th1: Moving 6 from t1
+Th1: t1=100010, t3=99993
+
+--- Display Thread ---
+t1=100010, t2=99997, t3=99993
+Total=300000
+--- End Display ---
+
+Th3: Moving 9 from t3
+Th3: t3=99984, t1=100019
+Th2: Moving 18 from t2
+Th2: t2=99979, t1=100037
+Th1: Moving 3 from t1
+Th1: t1=100034, t2=99982
+Th3: Moving 13 from t3
+Th3: t3=99971, t1=100047
+Th1: Moving 7 from t1
+Th1: t1=100040, t2=99989
+Th2: Moving 11 from t2
+Th2: t2=99978, t1=100051
+Th1: Moving 5 from t1
+Th1: t1=100046, t2=99983
+
+--- Display Thread ---
+t1=100046, t2=99983, t3=99971
+Total=300000
+--- End Display ---
+
+Th3: Moving 26 from t3
+Th3: t3=99945, t2=100009
+Th2: Moving 4 from t2
+Th2: t2=100005, t3=99949
+Th1: Moving 8 from t1
+Th1: t1=100038, t3=99957
+Th2: Moving 3 from t2
+Th2: t2=100002, t1=100041
+Th1: Moving 6 from t1
+Th1: t1=100035, t2=100008
+Th3: Moving 14 from t3
+Th3: t3=99943, t1=100049
+Th1: Moving 4 from t1
+Th1: t1=100045, t3=99947
+Th2: Moving 2 from t2
+Th2: t2=100006, t3=99949
+
+--- Display Thread ---
+t1=100045, t2=100006, t3=99949
+Total=300000
+--- End Display ---
+
+Th3: Moving 9 from t3
+Th3: t3=99940, t2=100015
+Th1: Moving 2 from t1
+Th1: t1=100043, t3=99942
+Th2: Moving 4 from t2
+Th2: t2=100011, t3=99946
+Th1: Moving 1 from t1
+Th1: t1=100042, t3=99947
+Th3: Moving 21 from t3
+Th3: t3=99926, t1=100063
+Th2: Moving 2 from t2
+Th2: t2=100009, t1=100065
+Th1: Moving 10 from t1
+Th1: t1=100055, t2=100019
+Th1: Moving 3 from t1
+Th1: t1=100052, t2=100022
+
+--- Display Thread ---
+t1=100052, t2=100022, t3=99926
+Total=300000
+--- End Display ---
+
+Th3: Moving 22 from t3
+Th3: t3=99904, t2=100044
+Th2: Moving 18 from t2
+Th2: t2=100026, t1=100070
+Th1: Moving 3 from t1
+Th1: t1=100067, t3=99907
+Th2: Moving 11 from t2
+Th2: t2=100015, t3=99918
+Th3: Moving 22 from t3
+Th3: t3=99896, t1=100089
+Th1: Moving 6 from t1
+Th1: t1=100083, t3=99902
+Th2: Moving 14 from t2
+Th2: t2=100001, t1=100097
+Th1: Moving 9 from t1
+Th1: t1=100088, t3=99911
+
+--- Display Thread ---
+t1=100088, t2=100001, t3=99911
+Total=300000
+--- End Display ---
+
+Th3: Moving 10 from t3
+Th3: t3=99901, t2=100011
+Th1: Moving 2 from t1
+Th1: t1=100086, t3=99903
+Th2: Moving 5 from t2
+Th2: t2=100006, t3=99908
+Th1: Moving 3 from t1
+Th1: t1=100083, t2=100009
+Th3: Moving 12 from t3
+Th3: t3=99896, t1=100095
+Th2: Moving 7 from t2
+Th2: t2=100002, t1=100102
+Th1: Moving 5 from t1
+Th1: t1=100097, t3=99901
+
+--- Display Thread ---
+t1=100097, t2=100002, t3=99901
+Total=300000
+--- End Display ---
+
+Th3: Moving 10 from t3
+Th3: t3=99891, t2=100012
+Th2: Moving 19 from t2
+Th2: t2=99993, t1=100116
+Th1: Moving 7 from t1
+Th1: t1=100109, t3=99898
+Th1: Moving 1 from t1
+Th1: t1=100108, t2=99994
+Th2: Moving 13 from t2
+Th2: t2=99981, t3=99911
+Th3: Moving 15 from t3
+Th3: t3=99896, t1=100123
+Th1: Moving 1 from t1
+Th1: t1=100122, t3=99897
+Th2: Moving 17 from t2
+Th2: t2=99964, t1=100139
+Th1: Moving 4 from t1
+Th1: t1=100135, t2=99968
+
+--- Display Thread ---
+t1=100135, t2=99968, t3=99897
+Total=300000
+--- End Display ---
+
+Th3: Moving 28 from t3
+Th3: t3=99869, t1=100163
+Th2: Moving 4 from t2
+Th2: t2=99964, t1=100167
+Th1: Moving 10 from t1
+Th1: t1=100157, t3=99879
+Th3: Moving 11 from t3
+Th3: t3=99868, t1=100168
+Th1: Moving 2 from t1
+Th1: t1=100166, t3=99870
+Th2: Moving 6 from t2
+Th2: t2=99958, t3=99876
+Th1: Moving 1 from t1
+Th1: t1=100165, t2=99959
+
+--- Display Thread ---
+t1=100165, t2=99959, t3=99876
+Total=300000
+--- End Display ---
+
+Th3: Moving 6 from t3
+Th3: t3=99870, t1=100171
+Th2: Moving 13 from t2
+Th2: t2=99946, t3=99883
+Th1: Moving 4 from t1
+Th1: t1=100167, t2=99950
+Th2: Moving 2 from t2
+Th2: t2=99948, t1=100169
+Th1: Moving 9 from t1
+Th1: t1=100160, t2=99957
+Th3: Moving 27 from t3
+Th3: t3=99856, t1=100187
+Th1: Moving 8 from t1
+Th1: t1=100179, t2=99965
+Th2: Moving 20 from t2
+Th2: t2=99945, t1=100199
+Th3: Moving 3 from t3
+Th3: t3=99853, t1=100202
+
+--- Display Thread ---
+t1=100202, t2=99945, t3=99853
+Total=300000
+--- End Display ---
+
+Th1: Moving 9 from t1
+Th1: t1=100193, t3=99862
+Th2: Moving 3 from t2
+Th2: t2=99942, t3=99865
+Th1: Moving 4 from t1
+Th1: t1=100189, t3=99869
+Th3: Moving 11 from t3
+Th3: t3=99858, t1=100200
+Th2: Moving 15 from t2
+Th2: t2=99927, t3=99873
+Th1: Moving 5 from t1
+Th1: t1=100195, t2=99932
+Th1: Moving 4 from t1
+Th1: t1=100191, t3=99877
+Th3: Moving 17 from t3
+Th3: t3=99860, t2=99949
+
+--- Display Thread ---
+t1=100191, t2=99949, t3=99860
+Total=300000
+--- End Display ---
+
+Th2: Moving 5 from t2
+Th2: t2=99944, t1=100196
+Th1: Moving 3 from t1
+Th1: t1=100193, t3=99863
+Th2: Moving 9 from t2
+Th2: t2=99935, t1=100202
+Th3: Moving 4 from t3
+Th3: t3=99859, t1=100206
+Th1: Moving 1 from t1
+Th1: t1=100205, t3=99860
+Th2: Moving 1 from t2
+Th2: t2=99934, t3=99861
+Th1: Moving 4 from t1
+Th1: t1=100201, t3=99865
+
+--- Display Thread ---
+t1=100201, t2=99934, t3=99865
+Th3: Moving 19 from t3
+Th3: t3=99846, t1=100220
+Total=300000
+--- End Display ---
+
+Th1: Moving 3 from t1
+Th1: t1=100217, t2=99937
+Th2: Moving 12 from t2
+Th2: t2=99925, t3=99858
+Th1: Moving 8 from t1
+Th1: t1=100209, t3=99866
+Th3: Moving 15 from t3
+Th3: t3=99851, t2=99940
+Th2: Moving 13 from t2
+Th2: t2=99927, t1=100222
+Th1: Moving 10 from t1
+Th1: t1=100212, t3=99861
+
+--- Display Thread ---
+t1=100212, t2=99927, t3=99861
+Total=300000
+--- End Display ---
+
+Th3: Moving 12 from t3
+Th3: t3=99849, t1=100224
+Th2: Moving 16 from t2
+Th2: t2=99911, t3=99865
+Th1: Moving 1 from t1
+Th1: t1=100223, t3=99866
+^C

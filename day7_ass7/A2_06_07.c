@@ -40,54 +40,105 @@ Starting program...
 Initial: t1=100000, t2=100000, t3=100000
 
 Th1: Moving 5 from t1
-Th1: t1=99995, t2=100005
-Th2: Moving 16 from t2
-Th2: t2=99989, t1=100011
-Th3: Moving 3 from t3
-Th3: t3=99997, t2=99992
-
---- Display Thread ---
-t1=100011, t2=99992, t3=99997
-Total=300000
---- End Display ---
-
+Th1: t1=99995, t3=100005
 All threads started
-Th1: Moving 5 from t1
-Th1: t1=100006, t3=100002
-Th2: Moving 10 from t2
-Th2: t2=99982, t3=100012
-Th3: Moving 3 from t3
-Th3: t3=100009, t1=100009
-Th1: Moving 4 from t1
-Th1: t1=100005, t2=99986
-Th2: Moving 9 from t2
-Th2: t2=99977, t3=100018
-Th1: Moving 2 from t1
-Th1: t1=100003, t2=99979
+Th3: Moving 8 from t3
+Th3: t3=99997, t1=100003
 
 --- Display Thread ---
-t1=100003, t2=99979, t3=100018
+t1=100003, t2=100000, t3=99997
 Total=300000
 --- End Display ---
 
-Th3: Moving 25 from t3
-Th3: t3=99993, t1=100028
-Th1: Moving 6 from t1
-Th1: t1=100022, t3=99999
-Th2: Moving 7 from t2
-Th2: t2=99972, t3=100006
-Th3: Moving 22 from t3
-Th3: t3=99984, t1=100044
-Th1: Moving 10 from t1
-Th1: t1=100034, t2=99982
-Th2: Moving 17 from t2
-Th2: t2=99965, t1=100051
-Th1: Moving 5 from t1
-Th1: t1=100046, t2=99970
+Th2: Moving 10 from t2
+Th2: t2=99990, t1=100013
+Th1: Moving 9 from t1
+Th1: t1=100004, t2=99999
+Th2: Moving 10 from t2
+Th2: t2=99989, t3=100007
+Th3: Moving 26 from t3
+Th3: t3=99981, t1=100030
+Th1: Moving 9 from t1
+Th1: t1=100021, t2=99998
+Th2: Moving 4 from t2
+Th2: t2=99994, t1=100025
+Th1: Moving 9 from t1
+Th1: t1=100016, t2=100003
 
 --- Display Thread ---
-t1=100046, t2=99970, t3=99984
+t1=100016, t2=100003, t3=99981
 Total=300000
+--- End Display ---
+
+Th3: Moving 13 from t3
+Th3: t3=99968, t1=100029
+Th1: Moving 1 from t1
+Th1: t1=100028, t3=99969
+Th2: Moving 15 from t2
+Th2: t2=99988, t3=99984
+Th1: Moving 7 from t1
+Th1: t1=100021, t3=99991
+Th3: Moving 6 from t3
+Th3: t3=99985, t1=100027
+Th2: Moving 6 from t2
+Th2: t2=99982, t1=100033
+Th1: Moving 2 from t1
+Th1: t1=100031, t2=99984
+
+--- Display Thread ---
+t1=100031, t2=99984, t3=99985
+Total=300000
+--- End Display ---
+
+Th3: Moving 22 from t3
+Th3: t3=99963, t2=100006
+Th2: Moving 13 from t2
+Th2: t2=99993, t3=99976
+Th1: Moving 10 from t1
+Th1: t1=100021, t2=100003
+Th1: Moving 6 from t1
+Th1: t1=100015, t3=99982
+Th2: Moving 12 from t2
+Th2: t2=99991, t1=100027
+Th3: Moving 4 from t3
+Th3: t3=99978, t2=99995
+Th1: Moving 8 from t1
+Th1: t1=100019, t2=100003
+Th2: Moving 16 from t2
+Th2: t2=99987, t3=99994
+
+--- Display Thread ---
+t1=100019, t2=99987, t3=99994
+Total=300000
+--- End Display ---
+
+Th1: Moving 9 from t1
+Th1: t1=100010, t2=99996
+Th3: Moving 6 from t3
+Th3: t3=99988, t1=100016
+Th2: Moving 14 from t2
+Th2: t2=99982, t3=100002
+Th1: Moving 1 from t1
+Th1: t1=100015, t2=99983
+Th3: Moving 24 from t3
+Th3: t3=99978, t2=100007
+Th1: Moving 7 from t1
+Th1: t1=100008, t2=100014
+Th2: Moving 4 from t2
+Th2: t2=100010, t1=100012
+Th1: Moving 1 from t1
+Th1: t1=100011, t3=99979
+
+--- Display Thread ---
+t1=100011, t2=100010, t3=99979
+Total=300000
+--- End Display ---
+
+Th3: Moving 2 from t3
+Th3: t3=99977, t1=100013
+Th2: Moving 1 from t2
+Th2: t2=100009, t1=100014
+^C
 
 
 System Calls and Functions Used:
