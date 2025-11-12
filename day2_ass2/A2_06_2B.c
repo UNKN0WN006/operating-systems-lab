@@ -40,10 +40,12 @@
 #include <sys/stat.h>
 #include <sys/time.h>
 #include <sys/wait.h>
+#include <signal.h>
+#include <sys/types.h>
 #include <string.h>
 #include <errno.h>
 
-#define BUF 4096
+#define BUF 65536
 
 void check(int result, const char *msg) {
     if (result == -1) {
@@ -58,44 +60,154 @@ int main() {
     char *src = "bigfile.dat";
     char *dest = "received.dat";
 
-    mkfifo(fifo1, 0666);
-    mkfifo(fifo2, 0666);
+    if (mkfifo(fifo1, 0666) == -1 && errno != EEXIST) {
+        perror("mkfifo fifo1");
+        return 1;
+    }
+    if (mkfifo(fifo2, 0666) == -1 && errno != EEXIST) {
+        perror("mkfifo fifo2");
+        /* cleanup fifo1 if we created it */
+        unlink(fifo1);
+        return 1;
+    }
 
     struct timeval start, end;
     gettimeofday(&start, NULL);
 
-    if (fork() == 0) {
+    pid_t pid = fork();
+    if (pid == -1) {
+        perror("fork");
+        unlink(fifo1); unlink(fifo2);
+        return 1;
+    }
+
+    if (pid == 0) {
+        /* Child: read from fifo1 and write to fifo2 */
         char buf[BUF];
         int in = open(fifo1, O_RDONLY);
+        if (in == -1) {
+            perror("child: open fifo1");
+            exit(1);
+        }
         int out = open(fifo2, O_WRONLY);
-        ssize_t n;
+        if (out == -1) {
+            perror("child: open fifo2");
+            close(in);
+            exit(1);
+        }
 
-        while ((n = read(in, buf, BUF)) > 0)
-            write(out, buf, n);
+        ssize_t n;
+        while ((n = read(in, buf, BUF)) > 0) {
+            ssize_t written = 0;
+            while (written < n) {
+                ssize_t w = write(out, buf + written, n - written);
+                if (w == -1) {
+                    if (errno == EINTR) continue;
+                    perror("child: write to fifo2");
+                    close(in); close(out);
+                    exit(1);
+                }
+                written += w;
+            }
+        }
+        if (n == -1) perror("child: read from fifo1");
 
         close(in); close(out);
         exit(0);
     }
 
+    /* Parent: open fifo2 (read end) BEFORE opening fifo1 (write end) to avoid deadlock */
     char buf[BUF];
-    int src_fd = open(src, O_RDONLY);
-    int to_child = open(fifo1, O_WRONLY);
-    ssize_t n;
-
-    while ((n = read(src_fd, buf, BUF)) > 0)
-        write(to_child, buf, n);
-
-    close(src_fd); close(to_child);
 
     int from_child = open(fifo2, O_RDONLY);
-    int dest_fd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0666);
+    if (from_child == -1) {
+        perror("parent: open fifo2");
+        /* cleanup and kill child */
+        kill(pid, SIGTERM);
+        waitpid(pid, NULL, 0);
+        unlink(fifo1); unlink(fifo2);
+        return 1;
+    }
 
-    while ((n = read(from_child, buf, BUF)) > 0)
-        write(dest_fd, buf, n);
+    int src_fd = open(src, O_RDONLY);
+    if (src_fd == -1) {
+        perror("open src");
+        close(from_child);
+        kill(pid, SIGTERM);
+        waitpid(pid, NULL, 0);
+        unlink(fifo1); unlink(fifo2);
+        return 1;
+    }
+
+    int to_child = open(fifo1, O_WRONLY);
+    if (to_child == -1) {
+        perror("parent: open fifo1");
+        close(src_fd); close(from_child);
+        kill(pid, SIGTERM);
+        waitpid(pid, NULL, 0);
+        unlink(fifo1); unlink(fifo2);
+        return 1;
+    }
+
+    ssize_t n;
+    while ((n = read(src_fd, buf, BUF)) > 0) {
+        ssize_t written = 0;
+        while (written < n) {
+            ssize_t w = write(to_child, buf + written, n - written);
+            if (w == -1) {
+                if (errno == EINTR) continue;
+                perror("parent: write to fifo1");
+                close(src_fd); close(to_child); close(from_child);
+                kill(pid, SIGTERM);
+                waitpid(pid, NULL, 0);
+                unlink(fifo1); unlink(fifo2);
+                return 1;
+            }
+            written += w;
+        }
+    }
+    if (n == -1) perror("parent: read src");
+
+    close(src_fd);
+    /* finished writing to child */
+    close(to_child);
+
+    int dest_fd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0666);
+    if (dest_fd == -1) {
+        perror("open dest");
+        close(from_child);
+        waitpid(pid, NULL, 0);
+        unlink(fifo1); unlink(fifo2);
+        return 1;
+    }
+
+    while ((n = read(from_child, buf, BUF)) > 0) {
+        ssize_t written = 0;
+        while (written < n) {
+            ssize_t w = write(dest_fd, buf + written, n - written);
+            if (w == -1) {
+                if (errno == EINTR) continue;
+                perror("parent: write dest");
+                close(dest_fd); close(from_child);
+                waitpid(pid, NULL, 0);
+                unlink(fifo1); unlink(fifo2);
+                return 1;
+            }
+            written += w;
+        }
+    }
+    if (n == -1) perror("parent: read from fifo2");
+
+    /* ensure data is on disk before cmp */
+    if (fsync(dest_fd) == -1) perror("fsync dest");
 
     close(from_child); close(dest_fd);
 
-    wait(NULL);
+    int status = 0;
+    waitpid(pid, &status, 0);
+    if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
+        fprintf(stderr, "child exited abnormally\n");
+    }
 
     gettimeofday(&end, NULL);
     double time = (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec)/1e6;
@@ -106,6 +218,9 @@ int main() {
         printf("File returned successfully\n");
     else
         printf("File mismatch\n");
+    /* cleanup FIFOs */
+    unlink(fifo1);
+    unlink(fifo2);
 
     return 0;
 }
