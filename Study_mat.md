@@ -52,7 +52,7 @@ OS provides an environment for program execution and simplifies user operations.
   * **Microkernel Structure:** Only essential services (IPC, basic memory management, CPU scheduling) run in the kernel. Other services (file systems, device drivers) run in **user space**. More reliable and extensible but slower due to more context switches.
     \*
 
-[Images of Microkernel Structure]
+![Images of Microkernel Structure](https://github.com/UNKN0WN006/operating-systems-lab/blob/f626d1eaef13ee445ab67a18ed0d6e11593ea9e2/licensed-image%20(3).jpeg)
 
   * **Virtual Machine (VM):** Creates the illusion of multiple individual computers, each running its own OS on the same hardware. Provides a robust environment for different OSes.
 
@@ -106,7 +106,7 @@ The **PCB** is a data structure containing all the information needed to manage 
 
 A process changes state as it executes.
 
-[Images of Process State Transition Diagram]
+![Images of Process State Transition Diagram](https://github.com/UNKN0WN006/operating-systems-lab/blob/f626d1eaef13ee445ab67a18ed0d6e11593ea9e2/licensed-image%20(2).jpeg)
 
 **Process States:**
 
@@ -577,7 +577,7 @@ The directory provides a mapping between file names and the files themselves.
   * **Tree-Structured Directory (Acyclic Graph is also possible):** The most common structure. Allows users to create their own subdirectories. Efficient searching and grouping. **Problem:** File sharing is possible, but complex.
     \*
 
-[Images of Tree-Structured Directory]
+![Images of Tree-Structured Directory](https://github.com/UNKN0WN006/operating-systems-lab/blob/f626d1eaef13ee445ab67a18ed0d6e11593ea9e2/licensed-image%20(1).jpeg)
 
   * **Directed-Acyclic Graph (DAG):** Allows subdirectories to be shared, enabling a file to be in multiple directories (through **links**). **Problem:** Potential for **dangling pointers** if a shared file is deleted.
   * **Hash Table Directory:** Directories are implemented as a hash table for fast lookups.
@@ -650,7 +650,7 @@ Methods to keep track of available disk blocks.
 | **⭐ 6. Fragmentation** | Internal vs External | **Definitions**, clear **Examples** (e.g., small file in large page vs. scattered free blocks), and the **Solution** (Paging for External; Compaction/better fit for Internal). |
 | **⭐ 7. File system directory structures** | Advantages, Disadvantages | **Diagrams** (Mental or explicit
 
-[Images of Tree-Structured Directory]
+![Images of Tree-Structured Directory](https://github.com/UNKN0WN006/operating-systems-lab/blob/f626d1eaef13ee445ab67a18ed0d6e11593ea9e2/licensed-image.jpeg)
 ), clear **Advantages/Disadvantages** for Single, Two-Level, and Tree structures, and the **Dangling Pointer** problem in DAG. |
 
 -----
